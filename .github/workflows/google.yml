@@ -36,7 +36,7 @@ jobs:
       id-token: 'write'
 
 
-      # Ignore generated credentials from google-github-actions/authgha-creds-*.json
+      
 
     steps:
     - name: Checkout
