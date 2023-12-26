@@ -57,12 +57,12 @@ return [
             'strict' => true,
             'engine' => null,
             'sslmode' => 'require',
-            'options' => extension_loaded('pdo_mysql') && env('APP_ENV') !== 'testing' && env('APP_ENV') !== 'local' ? array_filter([
-                PDO::MYSQL_ATTR_SSL_CA => resource_path('singlestore/singlestore_bundle.pem'),
-                PDO::ATTR_EMULATE_PREPARES => true,
-                PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => true,
-                PDO::ATTR_PERSISTENT => (env('IS_HEROKU') == 'yes')
-         ]) : [],
+            'pdo' => [ 
+                PDO::MYSQL_ATTR_SSL_KEY => '/var/www/site/keys/client-key.pem' ,
+                PDO::MYSQL_ATTR_SSL_CERT =>'/var/www/site/keys/client-cert.pem' ,
+                PDO::MYSQL_ATTR_SSL_CA => '/var/www/site/keys/server-ca.pem' ,
+                PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false 
+          ],
           ],
 
         'pgsql' => [
