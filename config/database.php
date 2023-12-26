@@ -63,6 +63,9 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => '/var/www/site/keys/server-ca.pem' ,
                 PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false 
           ],
+          'options' => extension_loaded('pdo_mysql') ? array_filter([
+            PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+        ]) : [],
           ],
 
         'pgsql' => [
