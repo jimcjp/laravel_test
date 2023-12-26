@@ -57,16 +57,11 @@ return [
             'strict' => true,
             'engine' => null,
             'sslmode' => 'require',
-            'pdo' => [ 
-                PDO::MYSQL_ATTR_SSL_KEY => '/var/www/site/keys/client-key.pem' ,
-                PDO::MYSQL_ATTR_SSL_CERT =>'/var/www/site/keys/client-cert.pem' ,
-                PDO::MYSQL_ATTR_SSL_CA => '/var/www/site/keys/server-ca.pem' ,
-                PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false 
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
           ],
-          'options' => extension_loaded('pdo_mysql') ? array_filter([
-            PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
-        ]) : [],
-          ],
+          
 
         'pgsql' => [
             'driver' => 'pgsql',
