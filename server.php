@@ -6,6 +6,15 @@
  * @package  Laravel
  * @author   Taylor Otwell <taylor@laravel.com>
  */
+app.use(function (req, res, next){
+    if (req.headers['x-forwarded-proto'] === 'https') {
+      res.redirect('http://' + req.laraveltest2-8bf9fb565f5c.herokuapp.com);
+    } else {
+      next();
+    }
+  });
+
+
 
 $uri = urldecode(
     parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?? ''
