@@ -19,6 +19,7 @@
                     <hr>
 
                     <form>
+                        @csrf
                         <div class="form-group">
                             <label for="exampleInputName"  class="fs-14 font-weight-bold">用戶名</label>
                             <input type="email" placeholder="請填寫用戶名" class="form-control form-control-sm">        

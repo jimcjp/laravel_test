@@ -3,6 +3,7 @@
         <div class="d-flex">
             <a class="logo" href="{{ route('index') }}">Laravel</a>
             <form method="GET" action="{{ route('index') }}" class="form-inline my-2 my-lg-0 ml-3">
+                @csrf
                 <input value="{{ request()->query('keyword') }}" name="keyword" class="form-control form-control-sm" type="search" placeholder="
                 搜尋" aria-label="Search">
                 <select name="category_id" class="form-control form-control-sm ml-2" id="exampleFormControlSelect1">

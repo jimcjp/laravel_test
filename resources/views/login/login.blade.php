@@ -19,6 +19,7 @@
                     <hr>
 
                     <form>
+                        @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1"  class="fs-14 font-weight-bold">用戶 or email</label>
                             <input type="email" class="form-control form-control-sm"
