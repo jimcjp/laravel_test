@@ -61,7 +61,7 @@
             </div>
             <div class="col-sm-3 p-0">
                 @include('common.right-card', [
-                    'imgUrl' => '..\public\img\right-card.png',
+                    'imgUrl' => '..\img\right-card.png',
                     'title'  => '部落格網站',
                     'content'=> '一個用來學習Laravel 部落格網站, 基於Bootstrap4.0開發',
                     'count'  => $blogs->total(),
