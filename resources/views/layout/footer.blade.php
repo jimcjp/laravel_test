@@ -1,6 +1,6 @@
 <footer class="footer">
     <div class="blue">
-        <div class="container text-white">終身學習</div>
+        <div class="container text-white">laravel</div>
     </div>
 
     <div class="des">
